@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=NTR');
+
+html {
+    background-color: #212121;
+    color: #ffffff;
+    font-family: 'NTR', sans-serif;
+}
+
+h1,
+p {
+    margin: 0;
+}
+
+h1 {
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}

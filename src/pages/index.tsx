@@ -36,9 +36,6 @@ export default class IndexPage extends Component<IndexPageProps, IndexPageState>
                 <p>
                     This site is called <strong>{siteName}</strong>
                 </p>
-                <footer>
-                    Powered by <a href="https://www.gatsbyjs.org/" target="_blank">GatsbyJS</a> and <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
-                </footer>
             </MainLayout>
         );
     }
