@@ -11,10 +11,6 @@ p {
     margin: 0;
 }
 
-h1 {
-    line-height: 30px;
-}
-
 a {
     text-decoration: none;
     color: #FAFAFA;
@@ -30,4 +26,14 @@ a.button {
 a.button:hover {
     background-color: #00C853;
     border: 1px solid #00C853;
+}
+
+section.post-content-wrapper > p {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 20px 0;
+}
+
+section.post-content-wrapper > div.gatsby-highlight {
+    font-size: 14px;
 }
