@@ -7,11 +7,8 @@ export const MainLayout: React.SFC = memo(({ children }) => (
             <nav style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'start',
             }}>
-                <h3 style={{ marginRight: 'auto' }}>
-                    <Link to="/">Jeffrey Berry</Link>
-                </h3>
                 <ul style={{
                     listStyle: 'none',
                     display: 'flex',
@@ -19,8 +16,24 @@ export const MainLayout: React.SFC = memo(({ children }) => (
                     margin: '0',
                     padding: '0',
                 }}>
-                    <li style={{ margin: '0 5px' }}><Link to="/about">About</Link></li>
-                    <li style={{ margin: '0 5px' }}><Link to="/posts">Posts</Link></li>
+                    <li style={{ margin: '0 5px' }}>
+                        <Link
+                            style={{
+                                margin: '5px',
+                                fontSize: '18px',
+                            }}
+                            to="/"
+                        >Home</Link>
+                    </li>
+                    <li style={{ margin: '0 5px' }}>
+                        <Link
+                            style={{
+                                margin: '5px',
+                                fontSize: '18px',
+                            }}
+                            to="/about"
+                        >About</Link>
+                    </li>
                 </ul>
             </nav>
         </header>

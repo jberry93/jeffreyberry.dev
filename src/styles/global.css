@@ -2,7 +2,7 @@
 
 html {
     background-color: #212121;
-    color: #ffffff;
+    color: #FAFAFA;
     font-family: 'NTR', sans-serif;
 }
 
@@ -17,5 +17,17 @@ h1 {
 
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: #FAFAFA;
+}
+
+a.button {
+    border: 1px solid #FAFAFA;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.8s;
+}
+
+a.button:hover {
+    background-color: #00C853;
+    border: 1px solid #00C853;
 }

@@ -1,41 +1,21 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby';
 import { MainLayout } from '../layouts';
 
-interface IndexPageProps {
-    data: {
-        site: {
-            siteMetadata: {
-                siteName: string;
-            },
-        },
-    },
-};
+interface Props {};
 
-interface IndexPageState {}
+interface State {};
 
-export const pageQuery = graphql`
-    query IndexQuery {
-        site {
-            siteMetadata {
-                siteName,
-            },
-        },
-    },
-`;
-
-export default class IndexPage extends Component<IndexPageProps, IndexPageState> {
-    readonly name = 'Jeffrey Berry';
-
+export default class IndexPage extends Component<Props, State> {
     public render() {
-        const { siteName } = this.props.data.site.siteMetadata;
-
         return (
             <MainLayout>
-                <h1>My name is {this.name}</h1>
-                <p>
-                    This site is called <strong>{siteName}</strong>
-                </p>
+                <section style={{
+                    margin: '10px auto',
+                    maxWidth: 650,
+                    padding: '0 10px',
+                }}>
+                    <h3>Blog posts!</h3>
+                </section>
             </MainLayout>
         );
     }
