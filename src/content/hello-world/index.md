@@ -6,7 +6,7 @@ tags: ['test']
 path: '/posts/hello-world'
 ---
 
-I cannot believe I got this up and running! Let's try a few things out.
+Let's try a few things out.
 
 - List Item 1
 - List Item 2

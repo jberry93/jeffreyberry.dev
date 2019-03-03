@@ -14,7 +14,6 @@ interface Props {
     },
 };
 
-/** @TODO Figure out types for this */
 export default function BlogTemplate(props: Props): JSX.Element {
     const {
         data: {
@@ -30,6 +29,7 @@ export default function BlogTemplate(props: Props): JSX.Element {
             <article style={{
                 maxWidth: 700,
                 margin: '0 auto',
+                padding: '0 10px',
             }}>
                 <header>
                     <h1 style={{
