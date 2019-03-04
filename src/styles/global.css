@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=NTR');
 
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
 html {
     background-color: #212121;
     color: #FAFAFA;
@@ -18,7 +24,7 @@ a {
 
 main.content-wrapper {
     margin-top: 20px;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 /* 404 */
@@ -105,6 +111,10 @@ section.post-content-wrapper > div.gatsby-highlight {
     font-size: 18px;
 }
 
+pre[class*="language-"] {
+    border-radius: 10px;
+}
+
 ul.next-previous-posts {
     list-style: none;
     display: flex;
@@ -126,11 +136,17 @@ ul.next-previous-posts {
     
     section.post-content-wrapper > div.gatsby-highlight {
         font-size: 12px;
+        margin: 0 -20px;
+    }
+
+    pre[class*="language-"] {
+        border-radius: 0;
     }
 
     ul.next-previous-posts {
         flex-direction: column;
         align-items: start;
         font-size: 18px;
+        line-height: 30px;
     }
 }
