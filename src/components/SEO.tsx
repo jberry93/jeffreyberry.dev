@@ -1,85 +1,67 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
+
+interface Meta {
+    name?: undefined,
+    content: string,
+    property: string,
+}
 
 interface Props {
-    title: string;
-    description: string;
-    pathname: string;
-    article: boolean;
+    lang?: string,
+    description?: string,
+    meta?: ConcatArray<Meta>,
+    keywords?: string[],
+    title: string,
 }
 
-interface SEOObject {
-    title: string;
-    description: string;
-    url: string;
-}
-
-interface RenderProps {
+interface Query {
     site: {
         siteMetadata: {
-            defaultTitle: string;
-            titleTemplate: string;
-            defaultDescription: string;
-            siteUrl: string;
-        }
-    }
+            title: string,
+            description: string,
+            author: string,
+        },
+    },
 }
 
-const SEO: React.FC<Props> = ({ title, description, pathname, article }: Props) => (
-    <StaticQuery
-        query={query}
-        render={({
-            site: {
-                siteMetadata: {
-                    defaultTitle,
-                    titleTemplate,
-                    defaultDescription,
-                    siteUrl,
+export function SEO({ description, lang = 'en', meta = [], keywords = [], title }: Props): JSX.Element {
+    const { site }: Query = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        author
+                    }
                 }
-            },
-        }: RenderProps) => {
-            const seo: SEOObject = {
-                title: title || defaultTitle,
-                description: description || defaultDescription,
-                url: `${siteUrl}${pathname || '/'}`,
-            };
-
-            return (
-                <Helmet title={seo.title} titleTemplate={titleTemplate}>
-                    <meta name="description" content={seo.description}/>
-                    {seo.url && <meta property="og:url" content={seo.url}/>}
-                    {seo.title && (
-                        <>
-                            <meta property="og:title" content={seo.title}/>
-                            <meta property="twitter:title" content={seo.title}/>
-                        </>
-                    )}
-                    {seo.description && (
-                        <>
-                            <meta property="og:description" content={seo.description}/>
-                            <meta property="twitter:description" content={seo.description}/>
-                        </>
-                    )}
-
-                    {(article ? true : null) && <meta property="og:type" content="article"/>}
-                </Helmet>
-            );
-        }}
-    />
-);
-
-export default SEO;
-
-const query = graphql`
-    query SEO {
-        site {
-            siteMetadata {
-                defaultTitle: title
-                titleTemplate
-                defaultDescription: description
-                siteUrl: url
             }
-        }
-    }
-`;
+        `
+    );
+
+    const metaDescription: string = description || site.siteMetadata.description;
+
+    return (
+        <Helmet
+            htmlAttributes={{ lang, }}
+            title={title}
+            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            meta={[
+                { name: 'description', content: metaDescription, },
+                { property: 'og:title', content: title, },
+                { property: 'og:description', content: metaDescription, },
+                { property: 'og:type', content: 'website', },
+                { name: 'twitter:card', content: 'summary', },
+                { name: 'twitter:creator', content: site.siteMetadata.author, },
+                { name: 'twitter:title', content: title, },
+                { name: 'twitter:description', content: metaDescription, },
+            ].concat(
+                keywords && (keywords.length > 0) ?
+                { name: 'keywords', content: keywords.join(', '), } :
+                []
+            ).concat(meta)}
+        />
+    );
+}

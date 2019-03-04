@@ -1,9 +1,8 @@
 ---
 title: 'Hello World'
 date: '2019-03-02'
-tagline: 'Just saying hello :)'
+description: 'Just saying hello :)'
 tags: ['test']
-path: '/posts/hello-world'
 ---
 
 Let's try a few things out.
@@ -12,7 +11,7 @@ Let's try a few things out.
 - List Item 2
 - List Item 3
 
-```typescript{numberLines: true}
+```typescript
 interface Props {};
 
 interface State {};

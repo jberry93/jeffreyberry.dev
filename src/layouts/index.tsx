@@ -40,8 +40,5 @@ export const MainLayout: React.SFC = memo(({ children }) => (
         <main>
             {children}
         </main>
-        <footer style={{ display: 'none' }}>
-            Powered by <a href="https://www.gatsbyjs.org/" target="_blank">GatsbyJS</a> and <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
-        </footer>
     </Fragment>
 ));
