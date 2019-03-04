@@ -47,7 +47,7 @@ export function SEO({ description, lang = 'en', meta = [], keywords = [], title 
         <Helmet
             htmlAttributes={{ lang, }}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={`%s`}
             meta={[
                 { name: 'description', content: metaDescription, },
                 { property: 'og:title', content: title, },

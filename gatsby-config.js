@@ -14,6 +14,7 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-feed',
         'gatsby-plugin-offline',
+        'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -23,6 +24,7 @@ module.exports = {
                 background_color: '#ffffff',
                 theme_color: '#18FFFF',
                 display: 'minimal-ui',
+                icon: 'content/assets/gatsby-icon.png',
             },
         },
         {

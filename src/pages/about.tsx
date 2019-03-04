@@ -1,14 +1,39 @@
 import React, { Component } from 'react';
-import { MainLayout } from '../layouts';
+import { graphql } from 'gatsby';
 
-interface Props {};
+import { MainLayout } from '../layouts';
+import { SEO } from '../components';
+
+interface Props {
+    data: {
+        site: {
+            siteMetadata: {
+                social: {
+                    github: string,
+                    linkedin: string,
+                },
+            },
+        },
+    },
+};
 
 interface State {}
 
 export default class AboutPage extends Component<Props, State> {
     public render() {
+        const { data: {
+            site: {
+                siteMetadata: {
+                    social: {
+                        github,
+                        linkedin,
+                    },
+                },
+            },
+        } } = this.props;
         return (
             <MainLayout>
+                <SEO title="About"/>
                 <section style={{
                     position: 'absolute',
                     top: '50%',
@@ -25,14 +50,14 @@ export default class AboutPage extends Component<Props, State> {
                         justifyContent: 'space-evenly',
                     }}>
                         <a
-                            href="https://github.com/jberry93"
+                            href={github}
                             target="_blank"
                             style={{
                                 fontSize: 18,
                             }}
                         >Github</a>
                         <a
-                            href="https://www.linkedin.com/in/jeffrey-berry-82154a3a/"
+                            href={linkedin}
                             target="_blank"
                             style={{
                                 fontSize: 18,
@@ -44,3 +69,16 @@ export default class AboutPage extends Component<Props, State> {
         );
     }
 }
+
+export const pageQuery = graphql`
+    query {
+        site {
+            siteMetadata {
+                social {
+                    github
+                    linkedin
+                }
+            }
+        }
+    }
+`;

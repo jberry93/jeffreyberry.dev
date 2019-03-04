@@ -37,7 +37,7 @@ export const MainLayout: React.SFC = memo(({ children }) => (
                 </ul>
             </nav>
         </header>
-        <main>
+        <main className="content-wrapper">
             {children}
         </main>
     </Fragment>

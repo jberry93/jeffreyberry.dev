@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
+
 import { MainLayout } from '../layouts';
-import { SEO } from '../components/SEO';
+import { SEO } from '../components';
 
 interface Edge {
     node: {
@@ -40,20 +41,27 @@ export default class IndexPage extends Component<Props, State> {
         return (
             <MainLayout>
                 <SEO title="All Posts" keywords={['blog', 'gatsby', 'typescript', 'react']}/>
-                <section style={{
-                    margin: '10px auto',
-                    maxWidth: 650,
-                    padding: '0 10px',
-                }}>
+                <section className="posts-wrapper">
                     {posts.map(({ node }) => {
                         const title: string = node.frontmatter.title || node.fields.slug;
 
                         return (
-                            <div key={node.fields.slug}>
-                                <h3><Link to={node.fields.slug}>{title}</Link></h3>
-                                <small>{node.frontmatter.date}</small>
-                                <p dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt }}/>
-                            </div>
+                            <article key={node.fields.slug} className="post-article">
+                                <div className="post-info-wrapper">
+                                    <header className="post-title">
+                                        <Link to={node.fields.slug}>
+                                            {title}
+                                        </Link>
+                                    </header>
+                                    <small className="post-date">
+                                        {node.frontmatter.date}
+                                    </small>
+                                </div>
+                                <footer
+                                    dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt }}
+                                    className="post-description"
+                                />
+                            </article>
                         );
                     })}
                 </section>
@@ -79,6 +87,7 @@ export const pageQuery = graphql`
                     frontmatter {
                         date(formatString: "MMMM DD, YYYY")
                         title
+                        description
                     }
                 }
             }
