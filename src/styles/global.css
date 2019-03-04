@@ -2,7 +2,7 @@
 
 html {
     background-color: #212121;
-    color: #ffffff;
+    color: #FAFAFA;
     font-family: 'NTR', sans-serif;
 }
 
@@ -11,11 +11,126 @@ p {
     margin: 0;
 }
 
-h1 {
-    line-height: 30px;
-}
-
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: #FAFAFA;
+}
+
+main.content-wrapper {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+/* 404 */
+a.button {
+    border: 1px solid #FAFAFA;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.8s;
+}
+
+a.button:hover {
+    background-color: #00C853;
+    border: 1px solid #00C853;
+}
+
+/* Posts */
+section.posts-wrapper {
+    margin: 10px auto;
+    max-width: 650px;
+}
+
+article.post-article {
+    margin-top: 20px;
+}
+
+div.post-info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+header.post-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+small.post-date {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+footer.post-description {
+    font-size: 22px;
+}
+
+@media(max-width: 768px) {
+    div.post-info-wrapper {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    header.post-title {
+        line-height: 30px;
+        font-size: 28px;
+    }
+
+    small.post-date {
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    footer.post-description {
+        font-size: 20px;
+    }
+}
+
+/* Post */
+article.post-content-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+h1.post-title {
+    line-height: 30px;
+    font-size: 42px;
+}
+
+section.post-content-wrapper > p {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+section.post-content-wrapper > div.gatsby-highlight {
+    font-size: 18px;
+}
+
+ul.next-previous-posts {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 24px;
+}
+
+@media(max-width: 768px) {
+    h1.post-title {
+        font-size: 28px;
+    }
+
+    section.post-content-wrapper > p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    section.post-content-wrapper > div.gatsby-highlight {
+        font-size: 12px;
+    }
+
+    ul.next-previous-posts {
+        flex-direction: column;
+        align-items: start;
+        font-size: 18px;
+    }
 }

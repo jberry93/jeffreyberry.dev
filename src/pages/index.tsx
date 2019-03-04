@@ -1,42 +1,96 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby';
-import { MainLayout } from '../layouts';
+import { graphql, Link } from 'gatsby';
 
-interface IndexPageProps {
+import { MainLayout } from '../layouts';
+import { SEO } from '../components';
+
+interface Edge {
+    node: {
+        excerpt: string,
+        frontmatter: {
+            date: string,
+            title: string,
+            description: string,
+        },
+        fields: {
+            slug: string,
+        },
+    },
+}
+
+interface Props {
     data: {
         site: {
             siteMetadata: {
-                siteName: string;
+                title: string,
             },
+        },
+        allMarkdownRemark: {
+            edges: Edge[],
         },
     },
 };
 
-interface IndexPageState {}
+interface State {};
 
-export const pageQuery = graphql`
-    query IndexQuery {
-        site {
-            siteMetadata {
-                siteName,
-            },
-        },
-    },
-`;
-
-export default class IndexPage extends Component<IndexPageProps, IndexPageState> {
-    readonly name = 'Jeffrey Berry';
-
+export default class IndexPage extends Component<Props, State> {
     public render() {
-        const { siteName } = this.props.data.site.siteMetadata;
+        const { data } = this.props;
+        const posts = data.allMarkdownRemark.edges;
 
         return (
             <MainLayout>
-                <h1>My name is {this.name}</h1>
-                <p>
-                    This site is called <strong>{siteName}</strong>
-                </p>
+                <SEO title="All Posts" keywords={['blog', 'gatsby', 'typescript', 'react']}/>
+                <section className="posts-wrapper">
+                    {posts.map(({ node }) => {
+                        const title: string = node.frontmatter.title || node.fields.slug;
+
+                        return (
+                            <article key={node.fields.slug} className="post-article">
+                                <div className="post-info-wrapper">
+                                    <header className="post-title">
+                                        <Link to={node.fields.slug}>
+                                            {title}
+                                        </Link>
+                                    </header>
+                                    <small className="post-date">
+                                        {node.frontmatter.date}
+                                    </small>
+                                </div>
+                                <footer
+                                    dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt }}
+                                    className="post-description"
+                                />
+                            </article>
+                        );
+                    })}
+                </section>
             </MainLayout>
         );
     }
 }
+
+export const pageQuery = graphql`
+    query {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            edges {
+                node {
+                    excerpt
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                        description
+                    }
+                }
+            }
+        }
+    }
+`;
