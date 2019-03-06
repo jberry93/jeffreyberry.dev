@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
 
 import { MainLayout } from '../layouts';
 import { SEO } from '../components';
@@ -33,6 +34,7 @@ interface Props {
                 title: string,
                 date: string,
                 description: string,
+                tags: string[],
             },
         },
     },
@@ -43,6 +45,7 @@ interface State {}
 export default class BlogPostTemplate extends Component<Props, State> {
     public render() {
         const post = this.props.data.markdownRemark;
+        const tags = this.props.data.markdownRemark.frontmatter.tags;
         const { previous, next } = this.props.pageContext;
 
         return (
@@ -55,6 +58,15 @@ export default class BlogPostTemplate extends Component<Props, State> {
                     <header>
                         <h1 className="post-title">{post.frontmatter.title}</h1>
                         <p>{post.frontmatter.date}</p>
+                        <ul className="tags">
+                            {tags.map((tag: string) => (
+                                <li key={tag} className={tag}>
+                                    <Link to={`/tags/${kebabCase(tag)}`}>
+                                        {tag}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </header>
                     <section
                         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -94,6 +106,7 @@ export const pageQuery = graphql`
                 title
                 date(formatString: "MMMM DD, YYYY")
                 description
+                tags
             }
         }
     }

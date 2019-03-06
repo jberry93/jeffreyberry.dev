@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=NTR');
 
+:root {
+    --main-background-color: #212121;
+    --main-color: #FAFAFA;
+    --fourofour-btn-background-color: #00C853;
+    --react-background-color: #00d8ff;
+    --typescript-background-color: #0277bd;
+}
+
 html {
-    background-color: #212121;
-    color: #FAFAFA;
+    background-color: var(--main-background-color);
+    color: var(--main-color);
     font-family: 'NTR', sans-serif;
 }
 
@@ -13,7 +21,7 @@ p {
 
 a {
     text-decoration: none;
-    color: #FAFAFA;
+    color: var(--main-color);
 }
 
 main.content-wrapper {
@@ -23,15 +31,15 @@ main.content-wrapper {
 
 /* 404 */
 a.button {
-    border: 1px solid #FAFAFA;
+    border: 1px solid var(--main-color);
     padding: 5px 10px;
     border-radius: 8px;
     transition: 0.8s;
 }
 
 a.button:hover {
-    background-color: #00C853;
-    border: 1px solid #00C853;
+    background-color: var(--fourofour-btn-background-color);
+    border: 1px solid var(--fourofour-btn-background-color);
 }
 
 /* Posts */
@@ -133,4 +141,23 @@ ul.next-previous-posts {
         align-items: start;
         font-size: 18px;
     }
+}
+
+/* Tags */
+ul.tags-list {
+    list-style: none;
+    padding: 0;
+}
+
+a.tag-link {
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.react {
+    background-color: var(--react-background-color);
+}
+
+.typescript {
+    background-color: var(--typescript-background-color);
 }

@@ -3,6 +3,8 @@ title: 'Hello World'
 date: '2019-03-02'
 description: 'Just saying hello :)'
 tags: ['test']
+path: 'hello-world'
+published: true
 ---
 
 Let's try a few things out.
