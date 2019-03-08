@@ -48,7 +48,6 @@ export default class TagsTemplate extends Component<Props, State> {
                         );
                     })}
                 </ul>
-                <Link to="/tags">All tags</Link>
             </MainLayout>
         );    
     }

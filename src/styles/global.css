@@ -163,11 +163,14 @@ ul.next-previous-posts {
 ul.tags-list {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 a.tag-link {
     border-radius: 10px;
     padding: 0 10px;
+    margin-right: 10px;
 }
 
 .react {

@@ -58,10 +58,10 @@ export default class BlogPostTemplate extends Component<Props, State> {
                     <header>
                         <h1 className="post-title">{post.frontmatter.title}</h1>
                         <p>{post.frontmatter.date}</p>
-                        <ul className="tags">
+                        <ul className="tags-list">
                             {tags.map((tag: string) => (
-                                <li key={tag} className={tag}>
-                                    <Link to={`/tags/${kebabCase(tag)}`}>
+                                <li key={tag}>
+                                    <Link to={`/tags/${kebabCase(tag)}`} className={[tag, 'tag-link'].join(' ')}>
                                         {tag}
                                     </Link>
                                 </li>
