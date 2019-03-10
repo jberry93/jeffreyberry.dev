@@ -2,7 +2,7 @@
 title: 'Hello World'
 date: '2019-03-02'
 description: 'Just saying hello :)'
-tags: ['test']
+tags: ['react', 'typescript']
 path: 'hello-world'
 published: true
 ---

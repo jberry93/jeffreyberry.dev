@@ -6,6 +6,8 @@
     --fourofour-btn-background-color: #00C853;
     --react-background-color: #00d8ff;
     --typescript-background-color: #0277bd;
+    --vue-background-color: #42b883;
+    --javascript-background-color: #f7df1e;
 }
 
 html,
@@ -30,85 +32,7 @@ a {
     color: var(--main-color);
 }
 
-main.content-wrapper {
-    margin-top: 20px;
-    padding: 0 20px;
-}
-
-/* 404 */
-a.button {
-    border: 1px solid var(--main-color);
-    padding: 5px 10px;
-    border-radius: 8px;
-    transition: 0.8s;
-}
-
-a.button:hover {
-    background-color: var(--fourofour-btn-background-color);
-    border: 1px solid var(--fourofour-btn-background-color);
-}
-
-/* Posts */
-section.posts-wrapper {
-    margin: 10px auto;
-    max-width: 650px;
-}
-
-article.post-article {
-    margin-top: 20px;
-}
-
-div.post-info-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-header.post-title {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-small.post-date {
-    font-size: 18px;
-    margin-left: 10px;
-}
-
-footer.post-description {
-    font-size: 22px;
-}
-
-@media(max-width: 768px) {
-    div.post-info-wrapper {
-        align-items: start;
-        flex-direction: column;
-    }
-
-    header.post-title {
-        line-height: 30px;
-        font-size: 28px;
-    }
-
-    small.post-date {
-        margin-left: 0;
-        font-size: 16px;
-    }
-
-    footer.post-description {
-        font-size: 20px;
-    }
-}
-
 /* Post */
-article.post-content-wrapper {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-h1.post-title {
-    line-height: 30px;
-    font-size: 42px;
-}
-
 section.post-content-wrapper > p {
     font-size: 24px;
     line-height: 30px;
@@ -123,20 +47,7 @@ pre[class*="language-"] {
     border-radius: 10px;
 }
 
-ul.next-previous-posts {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    font-size: 24px;
-}
-
 @media(max-width: 768px) {
-    h1.post-title {
-        font-size: 28px;
-    }
-
     section.post-content-wrapper > p {
         font-size: 18px;
         line-height: 24px;
@@ -150,27 +61,14 @@ ul.next-previous-posts {
     pre[class*="language-"] {
         border-radius: 0;
     }
-
-    ul.next-previous-posts {
-        flex-direction: column;
-        align-items: start;
-        font-size: 18px;
-        line-height: 30px;
-    }
 }
 
 /* Tags */
-ul.tags-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 a.tag-link {
     border-radius: 10px;
     padding: 0 10px;
     margin-right: 10px;
+    font-weight: bold;
 }
 
 .react {
@@ -179,4 +77,13 @@ a.tag-link {
 
 .typescript {
     background-color: var(--typescript-background-color);
+}
+
+.vue {
+    background-color: var(--vue-background-color);
+}
+
+.javascript {
+    background-color: var(--javascript-background-color);
+    color: var(--main-background-color);
 }

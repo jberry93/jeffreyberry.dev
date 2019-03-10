@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
+import { css } from 'glamor';
 
 import { MainLayout } from '../layouts';
 import { SEO } from '../components';
@@ -31,37 +32,42 @@ export default class AboutPage extends Component<Props, State> {
                 },
             },
         } } = this.props;
+
+        const sectionStyle = css({
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+        });
+
+        const h1Style = css({
+            textAlign: 'center',
+            fontSize: 32,
+        });
+
+        const divWrapperStyle = css({
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+        });
+
+        const linksStyle = css({ fontSize: 18 });
+
         return (
             <MainLayout>
                 <SEO title="About"/>
-                <section style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                }}>
-                    <h1 style={{
-                        textAlign: 'center',
-                        fontSize: 32,
-                    }}>Jeffrey Berry</h1>
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-evenly',
-                    }}>
+                <section {...sectionStyle}>
+                    <h1 {...h1Style}>Jeffrey Berry</h1>
+                    <div {...divWrapperStyle}>
                         <a
                             href={github}
                             target="_blank"
-                            style={{
-                                fontSize: 18,
-                            }}
+                            {...linksStyle}
                         >Github</a>
                         <a
                             href={linkedin}
                             target="_blank"
-                            style={{
-                                fontSize: 18,
-                            }}
+                            {...linksStyle}
                         >LinkedIn</a>
                     </div>
                 </section>
