@@ -49,6 +49,12 @@ export default class TagsTemplate extends Component<Props, State> {
             },
         });
 
+        const liStyle = css({
+            '@media(max-width:768px)': {
+                margin: '15px 0',
+            },
+        });
+
         return (
             <MainLayout>
                 <SEO title={tag}/>
@@ -58,7 +64,7 @@ export default class TagsTemplate extends Component<Props, State> {
                         const { path, title } = node.frontmatter;
     
                         return (
-                            <li key={path}>
+                            <li key={path} {...liStyle}>
                                 <Link to={path}>{title}</Link>
                             </li>
                         );
