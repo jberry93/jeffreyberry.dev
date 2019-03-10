@@ -18,6 +18,7 @@ const navStyle = css({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'start',
+    height: 50,
 });
 
 const ulStyle = css({
@@ -32,7 +33,7 @@ const liStyle = css({ margin: '0 5px' });
 
 const linkStyle = css({
     margin: 5,
-    fontSize: 18,
+    fontSize: 20,
 });
 
 const contentWrapperStyle = css({

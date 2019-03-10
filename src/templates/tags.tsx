@@ -40,12 +40,14 @@ export default class TagsTemplate extends Component<Props, State> {
             fontSize: 24,
             '@media(max-width:768px)': {
                 lineHeight: '30px',
+                fontSize: 20,
             },
         });
 
         const h1Style = css({
             '@media(max-width:768px)': {
                 lineHeight: '30px',
+                fontSize: 28,
             },
         });
 
