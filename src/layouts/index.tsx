@@ -1,5 +1,6 @@
 import React, { memo, Fragment } from 'react';
 import { Link } from 'gatsby';
+import { css } from 'glamor';
 
 interface Route {
     key: number;
@@ -13,28 +14,41 @@ const routes: Route[] = [
     {key: 2, label: 'Tags', route: '/tags'},
 ];
 
+const navStyle = css({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'start',
+});
+
+const ulStyle = css({
+    listStyle: 'none',
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    margin: '0',
+    padding: '0',
+});
+
+const liStyle = css({ margin: '0 5px' });
+
+const linkStyle = css({
+    margin: 5,
+    fontSize: 18,
+});
+
+const contentWrapperStyle = css({
+    marginTop: 20,
+    padding: '0 20px',
+});
+
 export const MainLayout: React.SFC = memo(({ children }) => (
     <Fragment>
         <header>
-            <nav style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'start',
-            }}>
-                <ul style={{
-                    listStyle: 'none',
-                    display: 'flex',
-                    justifyContent: 'space-evenly',
-                    margin: '0',
-                    padding: '0',
-                }}>
+            <nav {...navStyle}>
+                <ul {...ulStyle}>
                     {routes.map((routeObject: Route) => (
-                        <li style={{ margin: '0 5px' }} key={routeObject.key}>
+                        <li {...liStyle} key={routeObject.key}>
                             <Link
-                                style={{
-                                    margin: '5px',
-                                    fontSize: '18px',
-                                }}
+                                {...linkStyle}
                                 to={routeObject.route}
                             >{routeObject.label}</Link>
                         </li>
@@ -42,7 +56,7 @@ export const MainLayout: React.SFC = memo(({ children }) => (
                 </ul>
             </nav>
         </header>
-        <main className="content-wrapper">
+        <main {...contentWrapperStyle}>
             {children}
         </main>
     </Fragment>
