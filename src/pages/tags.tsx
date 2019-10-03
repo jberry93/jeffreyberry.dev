@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
+import { css } from 'glamor';
 
 import { SEO } from '../components';
 import { MainLayout } from '../layouts';
@@ -33,14 +34,27 @@ export default class TagsPage extends Component<Props, State> {
             }
         } = this.props;
 
+        const tagsListStyle = css({
+            listStyle: 'none',
+            padding: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            fontSize: 20,
+            '@media(max-width: 768px)': {
+                justifyContent: 'center',
+            },
+        });
+
+        const tagContainerStyle = css({ margin: 10 });
+
         return (
             <MainLayout>
                 <SEO title="Tags"/>
                 <section>
                     <h1>Tags</h1>
-                    <ul className="tags-list">
+                    <ul {...tagsListStyle}>
                         {group.map((tag: any) => (
-                            <li key={tag.fieldValue}>
+                            <li key={tag.fieldValue} {...tagContainerStyle}>
                                 <Link to={`/tags/${kebabCase(tag.fieldValue)}`} className={[tag.fieldValue, 'tag-link'].join(' ')}>
                                     {tag.fieldValue} ({tag.totalCount})
                                 </Link>
