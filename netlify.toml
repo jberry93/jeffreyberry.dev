@@ -1,0 +1,6 @@
+[build]
+    base = "/"
+
+[[redirects]]
+    from = "index.html"
+    to = "/"
