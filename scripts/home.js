@@ -1,3 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('scripts/service-worker.js');
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('scripts/service-worker.js');
+    });
 }
