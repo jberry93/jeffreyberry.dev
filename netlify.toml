@@ -4,3 +4,15 @@
 [[redirects]]
     from = "index.html"
     to = "/"
+
+[[redirects]]
+    from = "blog/index.html"
+    to = "/blog"
+
+[[redirects]]
+    from = "blog/this-is-a-test.html"
+    to = "/blog/this-is-a-test"
+
+[[redirects]]
+    from = "devlog/index.html"
+    to = "/devlog"
