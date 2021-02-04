@@ -1,0 +1,90 @@
+@import './shared.css';
+
+:root {
+    --image-margin: 20px;
+}
+
+header {
+    height: 90px;
+    max-width: var(--max-width);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+article {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+}
+
+article h1 {
+    font-size: 32px;
+}
+
+article p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px 0;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+}
+
+article figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+article figure picture img {
+    margin-top: var(--image-margin);
+    max-width: var(--max-width);
+}
+
+article figure figcaption {
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: var(--image-margin);
+}
+
+@media screen and (max-width: 920px) {
+    header {
+        height: 60px;
+    }
+
+    header nav ul a {
+        font-size: 14px;
+    }
+
+    article h1 {
+        font-size: 24px;
+    }
+
+    article p {
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    article figure picture img {
+        width: 100%;
+    }
+
+    header nav ul a,
+    article h1,
+    article p,
+    article figure {
+        padding: 0 10px;
+    }
+}

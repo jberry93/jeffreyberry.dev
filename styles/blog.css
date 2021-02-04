@@ -1,0 +1,50 @@
+@import './shared.css';
+
+section {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+section h1 {
+    font-size: 32px;
+}
+
+section ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+section ul li {
+    margin: 40px 0;
+}
+
+section ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 920px) {
+    section {
+        margin-top: 10px;
+    }
+
+    section ul li a {
+        font-size: 18px;
+    }
+
+    section h1 {
+        font-size: 24px;
+    }
+
+    section h1,
+    section small,
+    section ul li {
+        padding: 0 10px;
+    }
+}
