@@ -1,0 +1,24 @@
+{
+    "name": "jeffreyberry.dev",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "compressImages": "node convertImages.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jberry93/jeffreyberry.dev.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jberry93/jeffreyberry.dev/issues"
+    },
+    "homepage": "https://github.com/jberry93/jeffreyberry.dev#readme",
+    "devDependencies": {
+        "imagemin": "^7.0.1",
+        "imagemin-webp": "^6.0.0"
+    }
+}
