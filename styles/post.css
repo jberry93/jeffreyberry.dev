@@ -32,12 +32,39 @@ article h1 {
     font-size: 32px;
 }
 
-article p {
+article p,
+article p i,
+article ul li,
+article pre {
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 20px 0;
     line-height: 40px;
     letter-spacing: 0.5px;
+}
+
+article p {
+    margin: 20px 0;
+}
+
+article ul {
+    margin-left: 20px;
+}
+
+article p,
+article p i,
+article ul li {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+article pre {
+    font-family: monospace;
+    font-weight: 700;
+    overflow-x: scroll;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #212121;
+    border-radius: 10px;
 }
 
 article figure {
@@ -72,9 +99,16 @@ article figure figcaption {
         font-size: 24px;
     }
 
-    article p {
+    article p,
+    article p i,
+    article ul li,
+    article pre {
         font-size: 14px;
         line-height: 30px;
+    }
+
+    article pre {
+        margin: 0 15px;
     }
 
     article figure picture img {
