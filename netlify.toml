@@ -16,3 +16,15 @@
 [[redirects]]
     from = "devlog/index.html"
     to = "/devlog"
+
+[[redirects]]
+    from = "devlog/test-dev-log.html"
+    to = "/devlog/test-dev-log"
+
+[[redirects]]
+    from = "devlog/actix-test.html"
+    to = "/devlog/actix-test"
+
+[[redirects]]
+    from = "devlog/bitrix-tips.html"
+    to = "/devlog/bitrix-tips"
