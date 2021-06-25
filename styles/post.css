@@ -51,6 +51,7 @@ article ul {
 
 article p,
 article p i,
+article p a,
 article ul li {
     font-family: 'Times New Roman', Times, serif;
 }
@@ -101,6 +102,7 @@ article figure figcaption {
 
     article p,
     article p i,
+    article p a,
     article ul li,
     article pre {
         font-size: 14px;
