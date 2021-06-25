@@ -34,11 +34,16 @@ article h1 {
 
 article p,
 article p i,
+article p code,
 article ul li,
 article pre {
     font-size: 20px;
     line-height: 40px;
     letter-spacing: 0.5px;
+}
+
+article p code {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 article p {
@@ -103,6 +108,7 @@ article figure figcaption {
     article p,
     article p i,
     article p a,
+    article p code,
     article ul li,
     article pre {
         font-size: 14px;
