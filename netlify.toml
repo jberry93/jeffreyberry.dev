@@ -28,3 +28,7 @@
 [[redirects]]
     from = "devlog/bitrix-tips.html"
     to = "/devlog/bitrix-tips"
+
+[[redirects]]
+    from = "devlog/svg-chrome.html"
+    to = "/devlog/svg-chrome"
