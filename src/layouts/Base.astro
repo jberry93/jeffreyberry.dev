@@ -1,4 +1,9 @@
 ---
+import "@fontsource/outfit/300.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/outfit/900.css";
+
 type Props = {
     title?: string;
 };
@@ -15,9 +20,15 @@ const { title = "Jeffrey Berry" } = Astro.props satisfies Props;
         <link rel="icon" href="/images/favicon.ico">
         <title>{title}</title>
     </head>
-    <body>
+    <body class="bg-gray-950 text-gray-50 tracking-wider selection:bg-teal-300 selection:text-teal-900">
         <main>
             <slot/>
         </main>
     </body>
 </html>
+
+<style is:global>
+    body {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+</style>
