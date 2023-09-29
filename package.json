@@ -5,10 +5,10 @@
     "main": "index.js",
     "scripts": {
         "dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
     },
     "repository": {
         "type": "git",
@@ -22,6 +22,9 @@
     },
     "homepage": "https://github.com/jberry93/jeffreyberry.dev#readme",
     "dependencies": {
-        "astro": "^3.2.0"
+        "@astrojs/tailwind": "^5.0.0",
+        "@fontsource/outfit": "^5.0.8",
+        "astro": "^3.2.0",
+        "tailwindcss": "^3.3.3"
     }
 }
