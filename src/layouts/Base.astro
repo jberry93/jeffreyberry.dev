@@ -3,6 +3,7 @@ import "@fontsource/outfit/300.css";
 import "@fontsource/outfit/500.css";
 import "@fontsource/outfit/700.css";
 import "@fontsource/outfit/900.css";
+import { SEO } from "astro-seo";
 
 type Props = {
     title?: string;
@@ -25,11 +26,42 @@ const {
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KLDZ6NND');</script>
         <!-- End Google Tag Manager -->
-        <meta charset="utf-8">
-        <meta name="description" content={description}>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="/images/favicon.ico">
-        <title>{title}</title>
+        <SEO
+            title={title}
+            description={description}
+            charset="utf-8"
+            openGraph={{
+                image: {
+                    url: "https://www.jeffreyberry.dev/images/headshot.jpg",
+                    secureUrl: "https://www.jeffreyberry.dev/images/headshot.jpg",
+                    type: "image/jpeg",
+                    alt: "My headshot",
+                    width: 460,
+                    height: 460,
+                },
+                basic: {
+                    title,
+                    type: "website",
+                    image: "https://www.jeffreyberry.dev/images/headshot.jpg",
+                },
+            }}
+            twitter={{
+                title,
+                description,
+                image: "https://www.jeffreyberry.dev/images/headshot.jpg",
+                imageAlt: "My headshot",
+                card: "summary_large_image",
+            }}
+            extend={{
+                link: [
+                    { rel: "icon", href: "/images/favicon.ico" },
+                    { rel: "sitemap", href: "/sitemap-index.xml" },
+                ],
+                meta: [
+                    { name: "viewport", content: "width=device-width, initial-scale=1" },
+                ],
+            }}
+        />
     </head>
     <body class="bg-gray-950 text-gray-50 tracking-wider selection:bg-teal-300 selection:text-teal-900">
         <!-- Google Tag Manager (noscript) -->
