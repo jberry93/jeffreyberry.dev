@@ -6,9 +6,13 @@ import "@fontsource/outfit/900.css";
 
 type Props = {
     title?: string;
+    description?: string;
 };
 
-const { title = "Jeffrey Berry" } = Astro.props satisfies Props;
+const {
+    title = "Jeffrey Berry",
+    description = "I am based in Southern California in Orange County. I write software for cotua.com and cubeship.com ranging from websites, apis, and even a couple instances involving some data engineering",
+} = Astro.props satisfies Props;
 ---
 
 <!DOCTYPE html>
@@ -22,7 +26,7 @@ const { title = "Jeffrey Berry" } = Astro.props satisfies Props;
         })(window,document,'script','dataLayer','GTM-KLDZ6NND');</script>
         <!-- End Google Tag Manager -->
         <meta charset="utf-8">
-        <meta name="description" content="My personal site">
+        <meta name="description" content={description}>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="/images/favicon.ico">
         <title>{title}</title>
