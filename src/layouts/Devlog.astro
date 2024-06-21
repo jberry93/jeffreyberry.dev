@@ -1,0 +1,101 @@
+---
+import "@fontsource/outfit/300.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/outfit/900.css";
+import { type MarkdownLayoutProps } from "astro";
+import { SEO } from "astro-seo";
+
+type Props = MarkdownLayoutProps<{
+    title: string;
+    description: string;
+    cover?: string;
+    coverDescription?: string;
+}>;
+
+const {
+    frontmatter,
+    url,
+} = Astro.props satisfies Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+        <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLDZ6NND');</script>
+        <!-- End Google Tag Manager -->
+        <SEO
+            title={frontmatter.title}
+            description={frontmatter.description}
+            charset="utf-8"
+            openGraph={{
+                image: {
+                    url: frontmatter.cover ?? `https://www.jeffreyberry.dev/images/headshot.jpg`,
+                    secureUrl: frontmatter.cover ?? `https://www.jeffreyberry.dev/images/headshot.jpg`,
+                    type: "image/jpeg",
+                    alt: frontmatter.coverDescription ?? "My headshot",
+                    width: 460,
+                    height: 460,
+                },
+                basic: {
+                    title: frontmatter.title,
+                    type: "website",
+                    image: frontmatter.cover ?? "https://www.jeffreyberry.dev/images/headshot.jpg",
+                },
+            }}
+            twitter={{
+                title: frontmatter.title,
+                description: frontmatter.description,
+                image: frontmatter.cover ?? "https://www.jeffreyberry.dev/images/headshot.jpg",
+                imageAlt: frontmatter.coverDescription ?? "My headshot",
+                card: "summary_large_image",
+            }}
+            extend={{
+                link: [
+                    { rel: "icon", href: "https://www.jeffreyberry.dev/images/favicon.ico" },
+                    { rel: "sitemap", href: "https://www.jeffreyberry.dev/sitemap-index.xml" },
+                    { rel: "canonical", href: `https://www.jeffreyberry.dev${new URL(url ?? "", Astro.site).pathname}` },
+                ],
+                meta: [
+                    { name: "viewport", content: "width=device-width, initial-scale=1" },
+                ],
+            }}
+        />
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": "How to Upgrade Windows Applications Using Winget Commands",
+            "description": "Learn how to view and upgrade all or specific Windows applications using Winget commands. Simple steps with examples for updating apps like Git.",
+            "author": {
+                "@type": "Person",
+                "name": "Jeffrey Berry"
+            },
+            "datePublished": "2024-06-20"
+        }
+        </script>
+    </head>
+    <body class="bg-gray-950 text-gray-50 tracking-wider selection:bg-teal-300 selection:text-teal-900">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLDZ6NND"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <main>
+            <article class="mx-auto my-10 prose lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert">
+                <h1>{frontmatter.title}</h1>
+                <slot/>
+            </article>
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    body {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+</style>
