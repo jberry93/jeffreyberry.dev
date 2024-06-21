@@ -4,7 +4,7 @@ title: "How to Upgrade Windows Applications Using Winget Commands"
 description: "Learn how to view and upgrade all or specific Windows applications using Winget commands. Simple steps with examples for updating apps like Git."
 author: "Jeffrey Berry"
 date: "2024-06-20"
-cover: "https://jeffreyberry.dev/images/devlog/winget-upgrade/devlog_winget_upgrade.webp"
+cover: "https://jeffreyberry.dev/images/devlog/upgrade-windows-apps-winget-commands/seo-image.webp"
 coverDescription: "AI generated image of someone attempting to upgrade their software using winget"
 ---
 
