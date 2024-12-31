@@ -22,15 +22,15 @@
     },
     "homepage": "https://github.com/jberry93/jeffreyberry.dev#readme",
     "dependencies": {
-        "@astrojs/sitemap": "^3.1.6",
-        "@astrojs/tailwind": "^5.1.0",
-        "@fontsource/outfit": "^5.0.13",
-        "astro": "^4.11.0",
+        "@astrojs/sitemap": "^3.2.1",
+        "@astrojs/tailwind": "^5.1.4",
+        "@fontsource/outfit": "^5.1.1",
+        "astro": "^5.1.1",
         "astro-seo": "^0.8.4",
-        "tailwindcss": "^3.4.4"
+        "tailwindcss": "^3.4.17"
     },
-    "packageManager": "pnpm@9.1.2+sha512.127dc83b9ea10c32be65d22a8efb4a65fb952e8fefbdfded39bdc3c97efc32d31b48b00420df2c1187ace28c921c902f0cb5a134a4d032b8b5295cbfa2c681e2",
+    "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321",
     "devDependencies": {
-        "@tailwindcss/typography": "^0.5.13"
+        "@tailwindcss/typography": "^0.5.15"
     }
 }
