@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import "@fontsource/outfit/300.css";
 import "@fontsource/outfit/500.css";
 import "@fontsource/outfit/700.css";
@@ -11,6 +12,9 @@ type Props = MarkdownLayoutProps<{
     description: string;
     cover?: string;
     coverDescription?: string;
+    imageType?: string;
+    width?: number;
+    height?: number;
 }>;
 
 const {
@@ -37,10 +41,10 @@ const {
                 image: {
                     url: frontmatter.cover ?? `https://www.jeffreyberry.dev/images/headshot.jpg`,
                     secureUrl: frontmatter.cover ?? `https://www.jeffreyberry.dev/images/headshot.jpg`,
-                    type: "image/jpeg",
+                    type: frontmatter.imageType ?? "image/jpg",
                     alt: frontmatter.coverDescription ?? "My headshot",
-                    width: 460,
-                    height: 460,
+                    width: frontmatter.width ?? 460,
+                    height: frontmatter.height ?? 460,
                 },
                 basic: {
                     title: frontmatter.title,

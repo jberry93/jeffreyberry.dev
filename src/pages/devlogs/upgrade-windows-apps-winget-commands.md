@@ -5,6 +5,9 @@ description: "Learn how to view and upgrade all or specific Windows applications
 author: "Jeffrey Berry"
 date: "2024-06-20"
 cover: "https://jeffreyberry.dev/images/devlog/upgrade-windows-apps-winget-commands/seo-image.webp"
+imageType: "image/webp"
+width: 1920
+height: 1047
 coverDescription: "AI generated image of someone attempting to upgrade their software using winget"
 ---
 
